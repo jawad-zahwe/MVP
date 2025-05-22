@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id');
 
             $table->foreignId('type_id')
-            ->constrained('sectors')
+            ->constrained('organization_types')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
