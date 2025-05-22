@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('tender_advertisements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('advertisement_id')->constrained()->onDelete('cascade');
             $table->foreignId('organization_id')->constrained()->onDelete('cascade');
             
             // معلومات أساسية

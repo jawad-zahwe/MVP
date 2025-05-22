@@ -10,12 +10,10 @@ return new class extends Migration
     {
         Schema::create('training_advertisements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('advertisement_id')->constrained()->onDelete('cascade');
             $table->foreignId('organization_id')->constrained()->onDelete('cascade');
             $table->foreignId('trainer_id')->nullable()->constrained()->onDelete('set null');
-            $table->foreignId('assistant_id')->nullable()->constrained()->onDelete('set null');
             $table->string('title');
-            $table->text('description');
+            $table->text('dio');
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('duration');

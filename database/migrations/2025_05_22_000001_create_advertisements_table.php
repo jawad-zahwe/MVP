@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->enum('type', ['إعلان تدريب', 'إعلان مناقصة', 'إعلان استدراج عروض', 'إعلان عن احتياج مدرب', 'إعلان عن احتياج مساعد مدرب']);
+            $table->enum('type', ['إعلان تدريب', 'إعلان مناقصة', 'إعلان عن احتياج مدرب', 'إعلان عن احتياج مساعد مدرب']);
             $table->foreignId('training_advertisement_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('tender_advertisement_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('trainer_need_advertisement_id')->nullable()->constrained()->onDelete('cascade');

@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('trainer_assistant_advertisements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('advertisement_id')->constrained()->onDelete('cascade');
             $table->foreignId('organization_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('trainer_id')->nullable()->constrained()->onDelete('cascade');
             
