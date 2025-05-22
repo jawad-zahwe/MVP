@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('last_name');
 
-            $table->enum('sex', ['ذكر', 'أنثى']);
+            $table->string('sex');
 
             $table->string('headline');
 

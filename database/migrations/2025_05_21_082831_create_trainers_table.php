@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('last_name');
 
-            $table->enum('sex', ['ذكر', 'أنثى']);
+            $table->string('sex');
 
             $table->string('headline');
 
@@ -52,7 +52,7 @@ return new class extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->enum('status', ['متاح طوال الأسبوع' , 'متاح فقط في أيام العطل' , 'غير متاح مؤقتًا' ]);
+            $table->string('status');
             
             $table->decimal('hourly_wage' , 8, 2);
 
