@@ -19,6 +19,30 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            
+            $table->foreignId('user_type_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+
+            $table->string('bio');
+
+            $table->foreignId('country_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+
+            $table->foreignId('city_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+
+            $table->string('phone_number');
+
+            $table->string('photo')->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -45,5 +69,8 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::table('users', function (Blueprint $table) {
+            // $table->dropColumn('name');
+        });
     }
 };
